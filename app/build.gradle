@@ -1,16 +1,22 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
 android {
     compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
     defaultConfig {
-        applicationId "com.app_services.WooNam.chattingapp"
-        minSdkVersion 30
+        applicationId "com.example.test02"
+        minSdkVersion 18
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,36 +30,15 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    //noinspection GradleCompatible
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
-    implementation 'androidx.core:core:1.3.2'
     implementation 'com.google.android.material:material:1.3.0'
-    implementation 'com.google.firebase:firebase-auth:21.0.1'
-    implementation 'com.google.firebase:firebase-database:20.0.0'
-//    implementation 'com.google.firebase:firebase-core:16.0.1'
-    implementation 'com.google.firebase:firebase-storage:20.0.0'
-    implementation 'com.google.firebase:firebase-messaging:22.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
-    //FOR PROFILE PIC PURPOSE
-    implementation 'de.hdodenhof:circleimageview:3.0.0'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-
-
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    androidTestImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.google.firebase:firebase-database:19.6.0'//이미지 로딩하는데 사용하는 라이브러리
+    annotationProcessor'com.github.bumptech.glide:compiler:4.10.0' // 이거 있어야 androidx에 대응됨
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-
-apply plugin: 'com.google.gms.google-services'
