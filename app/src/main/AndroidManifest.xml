@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
+        <activity android:name=".ResultActivity" />
         <activity android:name=".UserProfileActivity"
             android:screenOrientation="fullSensor"/>
         <activity
@@ -39,6 +40,9 @@
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddressActivity"
+            android:screenOrientation="fullSensor" />
 
         <activity android:name=".BoardActivity"
             android:screenOrientation="fullSensor"

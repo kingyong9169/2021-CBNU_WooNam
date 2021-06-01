@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.app_services.WooNam.chattingapp.Fragments.ProjectlistFragment;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -105,6 +106,7 @@ public class MainChatActivity extends AppCompatActivity {
         viewPageAdapter.addFragment(new ChatsFragment(), "채팅방");
         viewPageAdapter.addFragment(new UsersFragment(), "유저");
         viewPageAdapter.addFragment(new FavoriteFragment(), "관심분야");
+        viewPageAdapter.addFragment(new ProjectlistFragment(), "프로젝트");
         Log.i("Checking Order", "onCreate: After View Page adapter creation");
 
         viewPager.setAdapter(viewPageAdapter);
