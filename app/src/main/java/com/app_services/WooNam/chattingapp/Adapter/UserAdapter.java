@@ -30,12 +30,12 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
-    private Context context;
+    private Context context; //선택한 activity에 대한 context를 가져올 때 사용
     private List<User> userList;
     private boolean isInChat;
     private String lastMessage;
 
-    public UserAdapter(Context context, List<User> userList, Boolean isInChat){
+    public UserAdapter(Context context, List<User> userList, Boolean isInChat){ //user리스트를 출력하는 fragment에대한 값주고받고 설정해주는게 Useradapter
         this.context = context;
         this.userList = userList;
         this.isInChat = isInChat;
@@ -43,37 +43,37 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) { // listview가 adapter에 연결 된 다음에 이쪽에서 최초로 view holder를 연결해줌
         View view = LayoutInflater.from(context).inflate(R.layout.user_item, viewGroup, false);
         return new UserAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {//각 item(이름,프로필,접속여부)에 대한 매칭을 시켜줌
         final User user = userList.get(i);
         viewHolder.tv_username.setText(user.getUsername());
         if (user.getImageURL().equals("default")){
-            viewHolder.profile_pic.setImageResource(R.mipmap.ic_default_profile_pic);
+            viewHolder.profile_pic.setImageResource(R.mipmap.ic_default_profile_pic); //프로필사진 설정하지 않았으면 default 프로필사진을 viewholder에 넣음
         } else {
-            Glide.with(context).load(user.getImageURL()).into(viewHolder.profile_pic);
+            Glide.with(context).load(user.getImageURL()).into(viewHolder.profile_pic);//설정한 프로필사진 viewholder에 넣기
         }
 
         Log.i("USER LIST : ", "onBindViewHolder: USER DETAILS = " + user.toString());
 
         if (isInChat){
-            checkLastMessage(user.getId(), viewHolder.tv_user_about_or_last_message);
+            checkLastMessage(user.getId(), viewHolder.tv_user_about_or_last_message); // Inchat이 true면 viewholder에서 마지막 메세지 가져옴
         } else {
-            viewHolder.tv_user_about_or_last_message.setText(user.getUser_about());
+            viewHolder.tv_user_about_or_last_message.setText(user.getUser_about()); //마지막 메세지를 viewholder에 넣어줌
         }
         if (isInChat){
             Log.i("USER STATUS", "onBindViewHolder: status = " + user.getStatus());
 
             switch (user.getStatus()) {
                 case "online":
-                    viewHolder.status.setImageResource(R.drawable.shape_bubble_online);
+                    viewHolder.status.setImageResource(R.drawable.shape_bubble_online); //online이면 초록불
                     break;
                 case "offline":
-                    viewHolder.status.setImageResource(R.drawable.shape_bubble_offline);
+                    viewHolder.status.setImageResource(R.drawable.shape_bubble_offline); //offline이면 회색불
                     break;
 
             }
@@ -82,9 +82,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MessageActivity.class);
+                Intent intent = new Intent(context, MessageActivity.class);//사용자리스트를 클릭하면 해당 사용자와 1대1채팅하는 화면으로 이동하기 때문에 해당정보를 MessageActivity로 이동시킴
                 intent.putExtra("userId", user.getId());
-                context.startActivity(intent);
+                context.startActivity(intent); //이동
             }
         });
         viewHolder.tv_user_about_or_last_message.setText(user.getUser_about());
@@ -102,7 +102,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         ImageView profile_pic;
         CircleImageView status;
 
-        ViewHolder(View itemView){
+        ViewHolder(View itemView){ //다음과 같은 view를 묶음
             super(itemView);
             tv_username = itemView.findViewById(R.id.username);
             tv_user_about_or_last_message = itemView.findViewById(R.id.tv_user_about_or_last_message);
@@ -111,14 +111,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
     }
 
-    private void checkLastMessage(final String userId, final TextView tv_user_about_or_last_message){
+    private void checkLastMessage(final String userId, final TextView tv_user_about_or_last_message){ //채팅목록에 마지막으로 작성된 메세지를 띄움
         lastMessage = "";
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Chats");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Chats"); //chat정보가 있는곳으로 데이터베이스 경로설정
         assert firebaseUser != null;
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) { //메세지 주고받으면 마지막 메세지가 바뀌게 되고 그걸 다시 설정해주는 것
                 try{
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
@@ -133,16 +133,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
                     switch (lastMessage){
                         case "":
-                            tv_user_about_or_last_message.setText("");
+                            tv_user_about_or_last_message.setText(""); //마지막 메세지가 비어있으면 빈칸 출력
                             break;
 
                         default:
-                            tv_user_about_or_last_message.setText(lastMessage);
+                            tv_user_about_or_last_message.setText(lastMessage); //마지막 메세지가 있으면 그거 출력
                             break;
                     }
                     lastMessage = "";
                 } catch (NullPointerException e){
-                    Log.i("NullPointerException", "onDataChange: " + e.getMessage());
+                    Log.i("NullPointerException", "onDataChange: " + e.getMessage()); //에러메세지 처리
                 }
 
             }
