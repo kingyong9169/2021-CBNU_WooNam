@@ -1,389 +1,390 @@
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RegisterActivity">
 
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-
     <LinearLayout
-        android:id="@+id/edit_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/bar_layout"/>
 
         <LinearLayout
+            android:id="@+id/edit_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원가입/프로필등록"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="회원가입/프로필등록"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:foregroundGravity="center_vertical"
-            android:minWidth="40dp"
-            android:minHeight="40dp"
-            android:visibility="gone" />
+            </LinearLayout>
 
 
-        <!--FirstName-->
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
+            <ProgressBar
+                android:id="@+id/progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/ic_person_outline_black_24dp" />
+                android:foregroundGravity="center_vertical"
+                android:minWidth="40dp"
+                android:minHeight="40dp"
+                android:visibility="gone" />
 
-            <com.google.android.material.textfield.TextInputLayout
+
+            <!--FirstName-->
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
 
-                <EditText
-                    android:id="@+id/fName"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/ic_person_outline_black_24dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/fName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="이름. "
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <!--별명-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/baseline_person_24" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="별명"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <!--관심사해시태그 설정-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/baseline_tag_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/favorite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="관심분야 3가지를 해시태그로 입력해주세요 "
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!--학교/학년/전공-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/baseline_school_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/school"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="학교/학년/전공"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <!--수상경험-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/baseline_aword_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/aword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="수상경험"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <!--깃허브 주소-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/baseline_git_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/git"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="깃허브 닉네임"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <!--Email-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/ic_mail_outline_black_24dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="이메일 "
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!--Password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="이름. "
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="비밀번호 "
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!--Confirm Password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingTop="16dp"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:hint="비밀번호 재확인"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColorHighlight="#7cff88" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
 
-            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-        <!--별명-->
-        <LinearLayout
+
+        <Button
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/baseline_person_24" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="별명"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-        <!--관심사해시태그 설정-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/baseline_tag_24" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/favorite"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="관심분야 3가지를 해시태그로 입력해주세요 "
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-        <!--학교/학년/전공-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/baseline_school_24" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/school"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="학교/학년/전공"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-
-        <!--수상경험-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/baseline_aword_24" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/aword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="수상경험"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-        <!--깃허브 주소-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/baseline_git_24" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/git"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="깃허브 닉네임"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-
-        <!--Email-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/ic_mail_outline_black_24dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="이메일 "
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <!--Password-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="비밀번호 "
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <!--Confirm Password-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:paddingTop="16dp"
-                app:srcCompat="@drawable/ic_lock_outline_black_24dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/confirm_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:hint="비밀번호 재확인"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textColorHighlight="#7cff88" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-
-
+            android:layout_below="@id/edit_area"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginEnd="100dp"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorWhite"
+            android:text="가입하기"
+            android:background="@color/colorButton"
+            />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_area"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginEnd="100dp"
-        android:padding="4dp"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif"
-        android:textColor="@color/colorWhite"
-        android:text="가입하기"
-        android:background="@color/colorButton"
-        />
-
-</RelativeLayout>
+</ScrollView>

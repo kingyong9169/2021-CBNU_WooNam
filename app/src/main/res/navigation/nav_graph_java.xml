@@ -5,17 +5,6 @@
     android:id="@+id/nav_graph_java"
     app:startDestination="@id/PostListFragment">
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/SignInFragment"-->
-    <!--        android:name="com.google.firebase.quickstart.database.java.MainFragment"-->
-    <!--        android:label="@string/title_sign_in"-->
-    <!--        tools:layout="@layout/fragment_main">-->
-
-    <!--        <action-->
-    <!--            android:id="@+id/action_SignInFragment_to_MainFragment"-->
-    <!--            app:popUpTo="@id/MainFragment"-->
-    <!--            app:destination="@id/MainFragment" />-->
-    <!--    </fragment>-->
     <fragment
         android:id="@+id/PostListFragment"
         android:name="com.app_services.WooNam.chattingapp.Fragments.PostListFragment"
@@ -23,10 +12,7 @@
         <action
             android:id="@+id/action_PostListFragment_to_NewPostFragment"
             app:destination="@id/NewPostFragment" />
-        <!--        <action-->
-        <!--            android:id="@+id/action_MainFragment_to_SignInFragment"-->
-        <!--            app:destination="@id/SignInFragment"-->
-        <!--            app:popUpTo="@id/SignInFragment" />-->
+
         <action
             android:id="@+id/action_PostListFragment_to_PostDetailFragment"
             app:destination="@id/PostDetailFragment">
