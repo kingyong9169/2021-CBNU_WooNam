@@ -47,7 +47,7 @@ public class ResultActivity extends AppCompatActivity {
         results.setResultDataList(intent.getParcelableArrayListExtra("results"));
 
         if(list.size() != 0){
-            guideTextView.setText(startPage + "페이지부터 " + lastPage + " 페이지까지의 결과: ");
+            guideTextView.setText(startPage + " 페이지부터 " + lastPage + " 페이지까지의 결과: ");
         } else {
             guideTextView.setText("결과가 없습니다.");
         }//search result
