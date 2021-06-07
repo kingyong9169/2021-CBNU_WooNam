@@ -17,13 +17,13 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="검색"
-            android:textAlignment="textStart"
+            android:text="대외 사이트 리스트"
+            android:gravity="center_vertical|left"
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </com.google.android.material.appbar.AppBarLayout>
 
