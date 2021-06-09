@@ -22,15 +22,15 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
-public class ForgetActivity extends AppCompatActivity {
+public class ForgetActivity extends AppCompatActivity {////forgetActivity에 필요한 변수들 불러옴
     EditText email;
     Button btn_reset;
     TextView tv_clicking;
 
-    FirebaseAuth firebaseAuth;
+    FirebaseAuth firebaseAuth;//파이어베이스 연동
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {//활동이 생성되면 생성됨 상태가 되도록함
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget);
 
@@ -71,7 +71,7 @@ public class ForgetActivity extends AppCompatActivity {
             }
         });
 
-        btn_reset.setOnClickListener(new View.OnClickListener() {
+        btn_reset.setOnClickListener(new View.OnClickListener() {//로그인의 버튼 클릭이벤트를 처리
             @Override
             public void onClick(View v) {
                 String str_email = email.getText().toString();

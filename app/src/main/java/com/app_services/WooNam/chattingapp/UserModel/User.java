@@ -2,7 +2,7 @@ package com.app_services.WooNam.chattingapp.UserModel;
 
 import android.util.Log;
 
-public class User {
+public class User {//유저 변수명 정의
     private String id;
     private String name;
     private String username;
@@ -17,6 +17,7 @@ public class User {
     private String searchable_name;
 
     public User(String id, String fName, String username, String email, String imageURL, String user_about, String user_status, String searchable_name,String git,String aword,String favorite,String school) {
+        //유저 함수정의
         this.id = id;
         this.name = fName;
         this.username = username;
@@ -33,12 +34,12 @@ public class User {
     }
 
     public User(){
-        //default Status;
+        //유저 기본 상태 정의 ;
         imageURL = "default";
         user_about = "Hey there, I'm using Chatting App.";
         Log.i("UserModel", "User: Default Constructor without Parameter!");
     }
-
+    //profile에 들어갈 함수,변수정의
     public String getId() {
         return id;
     }
@@ -132,7 +133,7 @@ public class User {
         return searchable_name;
     }
 
-    public void setSearchable_name(String searchable_name) {
+    public void setSearchable_name(String searchable_name) {//검색시 필요한 함수정의
         this.searchable_name = searchable_name;
     }
 

@@ -22,7 +22,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserProfileActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {////액티비티를 상속해줄 UesrProfileActivity를 생성
 
     TextView tv_name, tv_username, tv_about,tv_school,tv_aword,tv_git,tv_favorite;
     CircleImageView profile_pic;
@@ -30,21 +30,21 @@ public class UserProfileActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
+    protected void onCreate(Bundle savedInstanceState) {//홈 버튼으로 나갔다 들어왓을 경우 앱을 죽지 않게 처리를 할 수 있도록 도와줌
+        super.onCreate(savedInstanceState);//오버라이드된 메소드를처리한다 .
+        setContentView(R.layout.activity_user_profile);//user_profile을 보여줌
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("사용자 정보");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        Toolbar toolbar = findViewById(R.id.toolbar);//main.xml에서 사용하는 Toolbar를 변경할수 있는 메소드를 지원
+        setSupportActionBar(toolbar);//toolbar의 액션바 설정
+        getSupportActionBar().setTitle("사용자 정보");//tilte을 보여줌
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//뒤로가기 버튼
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {//뒤로가기 버튼 누를시 toolbar에 표현
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
+//oncreat에서 사용되는것들 정의
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         tv_name = findViewById(R.id.tvName);
         tv_about = findViewById(R.id.tvAbout);
@@ -55,15 +55,15 @@ public class UserProfileActivity extends AppCompatActivity {
         tv_favorite=findViewById(R.id.tvFavorite);
 
 
-        profile_pic = findViewById(R.id.user_profile_pic);
+        profile_pic = findViewById(R.id.user_profile_pic);//유저의 프로필 사진
 
         String userId = getIntent().getStringExtra("userId");
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
-        reference.addValueEventListener(new ValueEventListener() {
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);//Firebase관리
+        reference.addValueEventListener(new ValueEventListener() {//데이터를 읽고 수신 대기하기 위해서 필요
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {//경로의 전체 내용을 읽고 변경사항을 수신 대기
                 User user = dataSnapshot.getValue(User.class);
-                assert user != null;
+                assert user != null;//데이터베이스와 대조후 없는 사용자면 앱이종료됨
                 tv_name.setText(user.getName());
                 tv_about.setText(user.getUser_about());
                 tv_username.setText(user.getUsername());
@@ -79,14 +79,14 @@ public class UserProfileActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {//DAtabase 에러발생시 필요
                 Log.i("Database Error", "onCancelled: Error -> "+ databaseError.toString());
             }
         });
     }
 
 
-    private void Status(){
+    private void Status(){//유저의 상태를 나타냄 . 온라인일경우 초록색 작은원이 나옴
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         HashMap<String, Object> hashMap = new HashMap<>();
@@ -95,10 +95,9 @@ public class UserProfileActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume() {//생명주기를 관리함, 유저와 상호작용이 가능하고 onstart일때,화면이 노출되나 상호작용이 불가능
         super.onResume();
         Status();
     }
 
 }
-
