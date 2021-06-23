@@ -44,49 +44,22 @@
 
 ## 🌤 demo
 <div style="display:inline-block">
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>로그인</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123091991-f3617280-d464-11eb-9c38-3ccaf3dee4b0.gif" width="200" />
-  </div>
-
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>회원가입</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123092317-5226ec00-d465-11eb-92a7-7ce13f36cf97.gif" width="200" />
-  </div>
+<p style="margin:0px"><b>로그인&회원가입</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123091991-f3617280-d464-11eb-9c38-3ccaf3dee4b0.gif" width="250px" />
+<img src="https://user-images.githubusercontent.com/62797441/123092317-5226ec00-d465-11eb-92a7-7ce13f36cf97.gif" width="250px" />
 </div>
 
 <div style="display:inline-block">
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>프로필</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123093432-a67e9b80-d466-11eb-9ea7-5f64159a57d7.gif" width="200" />
-  </div>
-
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>게시판</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123093558-cdd56880-d466-11eb-9246-46df0464e445.gif" width="200" />
-  </div>
+<p style="margin:0px"><b>프로필&게시판</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093432-a67e9b80-d466-11eb-9ea7-5f64159a57d7.gif" width="250px" /><img src="https://user-images.githubusercontent.com/62797441/123093558-cdd56880-d466-11eb-9246-46df0464e445.gif" width="250px" />
 </div>
 
 <div style="display:inline-block">
-  <div style="display:inline-block">
-      <p style="margin:0px"><b>실시간 채팅</b></p>
-      <img src="https://user-images.githubusercontent.com/62797441/123093634-e2b1fc00-d466-11eb-9be1-8221669cdd6c.gif" width="200" />
-  </div>
-
-  <div style="display:inline-block">
-      <p style="margin:0px"><b>프로젝트 정보 제공(크롤링)</b></p>
-      <img src="https://user-images.githubusercontent.com/62797441/123093820-18ef7b80-d467-11eb-85ba-241ca8bf20f5.gif" width="200" />
-  </div>
+<p style="margin:0px"><b>실시간 채팅&프로젝트 정보 제공(크롤링)</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093634-e2b1fc00-d466-11eb-9be1-8221669cdd6c.gif" width="250px" /><img src="https://user-images.githubusercontent.com/62797441/123093820-18ef7b80-d467-11eb-85ba-241ca8bf20f5.gif" width="250px" />
 </div>
 
 <div style="display:inline-block">
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>유저 검색</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123093716-f65d6280-d466-11eb-9167-03b14eea79cb.gif" width="200" />
-  </div>
-
-  <div style="display:inline-block">
-    <p style="margin:0px"><b>관심사 검색</b></p>
-    <img src="https://user-images.githubusercontent.com/62797441/123093752-01b08e00-d467-11eb-8123-3ffb4d0e5593.gif" width="200" />
-  </div>
+<p style="margin:0px"><b>유저 검색&관심사 검색</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093716-f65d6280-d466-11eb-9167-03b14eea79cb.gif" width="250px" /><img src="https://user-images.githubusercontent.com/62797441/123093752-01b08e00-d467-11eb-8123-3ffb4d0e5593.gif" width="250px" />
 </div>
