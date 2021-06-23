@@ -105,37 +105,37 @@ public class RegisterActivity extends AppCompatActivity {//액티비티를 상�
 
         progressBar.setVisibility(View.VISIBLE);//progressbar 관련내용을 보이게 해줌
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override//email,password를 바탕으로 회원가입이 될수 있게함
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()) {//회원가입이 성공하지못했을경우
-                    progressBar.setVisibility(View.GONE);//아래 toast를 보여준다.
-                    Log.i("Task is Unsuccessful", "onComplete: Task: error" + task.getResult().toString());
-                    Toast.makeText(RegisterActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
-                } else {
-                    FirebaseUser firebaseUser = auth.getCurrentUser();//Firebase에서 사용자관리
-                    assert firebaseUser != null;//일치하지않을경우 앱이 종료될수있다.
-                    String userId = firebaseUser.getUid();
-                    reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
+                @Override//email,password를 바탕으로 회원가입이 될수 있게함
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (!task.isSuccessful()) {//회원가입이 성공하지못했을경우
+                        progressBar.setVisibility(View.GONE);//아래 toast를 보여준다.
+                        Log.i("Task is Unsuccessful", "onComplete: Task: error" + task.getResult().toString());
+                        Toast.makeText(RegisterActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        FirebaseUser firebaseUser = auth.getCurrentUser();//Firebase에서 사용자관리
+                        assert firebaseUser != null;//일치하지않을경우 앱이 종료될수있다.
+                        String userId = firebaseUser.getUid();
+                        reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
 
-                    HashMap<String, String> hashMap = new HashMap<>();
-                    putDataOnHash(hashMap, fName, email, userId, username,school,aword,favorite,git);//데이터베이스에 inputpara를 순서대로 넣어준다.
+                        HashMap<String, String> hashMap = new HashMap<>();
+                        putDataOnHash(hashMap, fName, email, userId, username,school,aword,favorite,git);//데이터베이스에 inputpara를 순서대로 넣어준다.
 
-                    reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {//완료되었다는 이벤트
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                progressBar.setVisibility(View.GONE);
-                                Toast.makeText(RegisterActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegisterActivity.this,MainChatActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
+                        reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {//완료되었다는 이벤트
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    progressBar.setVisibility(View.GONE);
+                                    Toast.makeText(RegisterActivity.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegisterActivity.this,MainChatActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
-            }
-        });
+            });
 
     }
     //database에 저장될 함수와 그내용들을 적어줌 (디폴트는 디폴트값으로 )
