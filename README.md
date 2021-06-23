@@ -1,56 +1,84 @@
-# OpenSource_SpecialtyProject
+# CBNU WooNam
 
-CBNU_WooNam 김동용, 김지원, 박재원, 최성운
+2021-1학기 오픈소스 전문프로젝트 팀 프로젝트
 
-## SW전공 프로젝트 팀원 찾기 서비스
+<b><i>"프찾사"</i></b><br>
+- 프로젝트 팀원 찾기 애플리케이션
 
-## 간단한 git 메뉴얼
 
-- master 브랜치에 있는 코드를 클론하여 내 컴퓨터 저장소에 가져온다.<br>
+## 🙏 Team Members
+* ![김동용](https://img.shields.io/badge/충북대학교_소프트웨어학과-김동용-blue)
 
-```Linux
-$ git clone https://github.com/kingyong9169/CBNU_WooNam.git
-```
+* ![김지원](https://img.shields.io/badge/충북대학교_소프트웨어학과-김지원-yellow)
 
-- 브랜치 생성
-  "git branch [브랜치 이름]" 을 해도 되지만 아래 방법을 추천
-  ※브랜치 이름은 Kebab 표현법으로 하도록 하자 ( ex main-page, front-color )
+* ![박재원](https://img.shields.io/badge/충북대학교_소프트웨어학과-박재원-green)
 
-```Linux
-$ git checkout -b [브랜치 이름]
-```
+* ![최성운](https://img.shields.io/badge/충북대학교_소프트웨어학과-최성운-red)
 
-- git status<br>
-  항상 add, commit 전에는
-  ```Linux
-   git status
-  ```
-  위 코드로 자신이 수정한 파일의 상태를 확인하여 맞다면 아래 사항들을 진행할 것
 
-* git add
-  "git add ." 대신에 어떤 일의 단위로 묶기 ( 나중에 comment 달 때에 힘들어지기 때문에 )
-  ex) 내가 main page의 버튼의 style을 바꾸는 작업을 하면서 style.html과 MainActivity를 건드렸다면
-  아래 예시와 같이 2개만 add하고 commit하는 것이 다른 사람들이 보기에도 편해진다
+## ✈ tech stack & used library
 
-```Linux
-$ git add style.html MainActivity
-```
+- Google Firebase
+- Java language
+- databinding
+- Jetpack's navigation
+- jsoup
 
-- git commit
-  commit은 위에서 말한 일의 단위로 묶어서 바로 commit을 날려주는 것이 좋다. 그리고 만약에 issue에 묶을 때는 아래 예시와 같이 하면 된다.
-  ※commit message는 영어로 해도 되지만 우리끼리 보고 빠르게 피드백하기위해 한글을 권장
 
-```Linux
-$ git commit -m "#[이슈번호] 메인 페이지의 버튼 style을 변경"
-```
 
-- git push
-  현재 master브랜치는 테스트와 작업이 완료된 즉 바로 배포해도 괜찮은 파일들만이 존재하는 곳이다. 그러니까 **master가 아닌 따로 브랜치를 만들어서 pull request를 날리거나** 급한 상황이면 모든 팀원들에게 말하고 master 브랜치에 push하도록 한다.
+## 🏁 features
+- <b>로그인, 로그아웃 및 회원가입 기능</b> : 프로젝트 역량에 필요한 항목들을 입력하여 회원가입을 하고 로그인을 하면 프로필을 통해 본인 및 다른 사람들의 프로젝트 역량을 볼 수 있고 이를 통해, 본인이 원하는 역량을 가진 팀원을 효율적으로 찾을 수 있습니다. 또한, 메인 화면에서 오른쪽 상단에 있는 버튼을 통해 로그아웃을 할 수 있고 로그인 화면으로 돌아갑니다.
 
-```Linux
-$ git push origin [자신의 브랜치]
-```
+- <b>실시간 채팅 기능</b> : 다른 사람들과 직접 실시간으로 채팅하면서 채팅을 통해 프로젝트 팀원을 찾을 수 있습니다. 카카오톡, 페이스북의 UI에서 착안하여 기능구현을 하였습니다. 상대방의 메시지 확인 여부를 ⋎(읽음)표시를 통해 확인할 수 있고 다른 사용자의 애플리케이션 접속 여부를 채팅목록에서 확인할 수 있습니다.
 
-- pull request (pr) 보내기
-  본인의 브랜치에 push했다면 github 페이지에서 자신의 branch에 들어갔을 시에 상단에 초록색 pull request 박스가 보일 것이다. 그러면 그것을 클릭하고 message 만들어서 git pull request하면 된다. 그리고 팀원들에게 merge할 것을 얘기하고 merge를 진행하면 된다. 현재 자신이 맡은 일이 마무리가 되었다고 판단되면 merge 시에 기존 브랜치를 삭제한다.
-  ※[pull request message 튜토리얼](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
+- <b>사용자 검색, 관심사 검색 기능</b> : 원하는 사용자의 이름을 검색하여 찾을 수 있고 “#안드로이드” 와 같이 본인이 관심 있는 분야의 사용자 목록을 보여주는 기능입니다. 이 기능으로 사용자가 원하는 관심 분야, 이름의 다른 사용자를 찾을 수 있도록 도와줍니다.
+
+- <b>프로젝트 정보 제공 기능</b> : 총 6개의 외부 사이트를 크롤링하여 사용자가 키워드를 입력하여 본인이 원하는 프로젝트 정보를 찾도록 도와주는 기능입니다. 먼저, 키워드를 입력하여 검색합니다. 검색하여 나오는 사이트를 클릭하고 원하는 게시글을 눌러 실제 사이트의 게시글로 이동하여 정보를 확인합니다.
+
+- <b>게시판 기능</b> : 프로젝트 팀원을 찾을 수 있도록 게시글을 작성하고 댓글을 작성할 수 있습니다. 또한, 게시글 옆에 ★ 표시를 하여 이 게시글에 대한 관심도를 표현할 수 있고 얼마나 인기 있는 게시글인지 확인할 수 있습니다. 다른 사용자가 올린 게시글의 닉네임을 보고 유저 검색을 통해 팀원을 찾아 프로필을 확인하고 채팅을 통해 프로젝트 팀원을 찾을 수 있습니다. 또한, 프로젝트 정보 제공 기능에서 찾은 프로젝트 정보로 게시글을 작성하여 팀원을 구할 수 있습니다. 이와 같이 프로젝트 팀원을 찾도록 응용할 수 있는 기능입니다.
+
+
+## 🛺 demo video
+["프찾사" 데모 영상](https://www.youtube.com/watch?v=JHwgMe92PHo&t=19s)
+
+
+## 🌤 demo
+<div style="float:left">
+<p style="margin:0"><b>로그인</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123091991-f3617280-d464-11eb-9c38-3ccaf3dee4b0.gif" width="200" />
+</div>
+
+<div style="float:left">
+<p style="margin:0"><b>회원가입</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123092317-5226ec00-d465-11eb-92a7-7ce13f36cf97.gif" width="200" />
+</div><br>
+
+<div style="float:left">
+<p style="margin:0"><b>프로필</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093432-a67e9b80-d466-11eb-9ea7-5f64159a57d7.gif" width="200" />
+</div>
+
+<div style="float:left">
+<p style="margin:0"><b>게시판</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093558-cdd56880-d466-11eb-9246-46df0464e445.gif" width="200" />
+</div><br>
+
+<div style="float:left">
+<p style="margin:0"><b>실시간 채팅</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093634-e2b1fc00-d466-11eb-9be1-8221669cdd6c.gif" width="200" />
+</div>
+
+<div style="float:left">
+<p style="margin:0"><b>프로젝트 정보 제공(크롤링)</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093820-18ef7b80-d467-11eb-85ba-241ca8bf20f5.gif" width="200" />
+</div><br>
+
+<div style="float:left">
+<p style="margin:0"><b>유저 검색</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093716-f65d6280-d466-11eb-9167-03b14eea79cb.gif" width="200" />
+</div>
+
+<div style="float:left">
+<p style="margin:0"><b>관심사 검색</b></p>
+<img src="https://user-images.githubusercontent.com/62797441/123093752-01b08e00-d467-11eb-8123-3ffb4d0e5593.gif" width="200" />
+</div><br>
